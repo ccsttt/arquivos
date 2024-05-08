@@ -26,18 +26,14 @@
 <body>
   <h2>Arquivos</h2>
   <ul id="file-list">
-    <!-- Os arquivos serão adicionados aqui via JavaScript -->
   </ul>
 
   <script>
-    // Array de arquivos com nome e tamanho
-    const files = [
+    [
       { name: "O que é o EIS | 08/05/24", size: "1,55MB", url: "https://raw.githubusercontent.com/ccsttt/arquivos/main/eis2.pdf" },
       { name: "Slide Viktor Tsoi | Trabalho para o dia 09/05/2024", size: "1,55MB", url: "https://raw.githubusercontent.com/ccsttt/arquivos/main/Apresentação%204.pptx" },
-      // Adicione mais arquivos conforme necessário
     ];
 
-    // Função para adicionar os arquivos à lista
     function addFilesToList() {
       const fileList = document.getElementById('file-list');
       files.forEach(file => {
@@ -51,8 +47,6 @@
         fileList.appendChild(listItem);
       });
     }
-
-    // Adiciona os arquivos à lista quando a página carrega
     window.addEventListener('DOMContentLoaded', addFilesToList);
   </script>
 </body>
