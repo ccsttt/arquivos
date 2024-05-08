@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download de Arquivos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    .file-link {
+      display: block;
+      margin-bottom: 5px;
+      text-decoration: none;
+      color: #333;
+    }
+    .file-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h2>Arquivos Disponíveis para Download</h2>
+  <ul id="file-list">
+    <!-- Os arquivos serão adicionados aqui via JavaScript -->
+  </ul>
+
+  <script>
+    // Array de arquivos com nome e tamanho
+    const files = [
+      { name: "Slide Viktor Tsoi", size: "-", url: "" },
+      // Adicione mais arquivos conforme necessário
+    ];
+
+    // Função para adicionar os arquivos à lista
+    function addFilesToList() {
+      const fileList = document.getElementById('file-list');
+      files.forEach(file => {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.setAttribute('href', file.url);
+        link.setAttribute('download', '');
+        link.classList.add('file-link');
+        link.textContent = `${file.name} (${file.size})`;
+        listItem.appendChild(link);
+        fileList.appendChild(listItem);
+      });
+    }
+
+    // Adiciona os arquivos à lista quando a página carrega
+    window.addEventListener('DOMContentLoaded', addFilesToList);
+  </script>
+</body>
+</html>
