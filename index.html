@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download de Arquivos</title>
+  <title>--Arquivos--</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -26,14 +26,17 @@
 <body>
   <h2>Arquivos</h2>
   <ul id="file-list">
+    
   </ul>
 
   <script>
-    = [
-      { name: "O que é o EIS | 08/05/24", size: "1,55MB", url: "https://raw.githubusercontent.com/ccsttt/arquivos/main/eis2.pdf" },
-      { name: "Slide Viktor Tsoi | Trabalho para o dia 09/05/2024", size: "0,1MB", url: "https://raw.githubusercontent.com/ccsttt/arquivos/main/Apresentação%204.pptx" },
+    
+    const files = [
+      { name: "Slide Viktor Tsoi | Trabalho para o dia 09/05/2024", size: "1,55MB", url: "https://raw.githubusercontent.com/ccsttt/arquivos/main/Apresentação%204.pptx" },
+      
     ];
 
+    // Função para adicionar os arquivos à lista
     function addFilesToList() {
       const fileList = document.getElementById('file-list');
       files.forEach(file => {
@@ -47,6 +50,8 @@
         fileList.appendChild(listItem);
       });
     }
+
+    
     window.addEventListener('DOMContentLoaded', addFilesToList);
   </script>
 </body>
