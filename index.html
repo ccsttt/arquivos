@@ -6,20 +6,63 @@
   <title>--Arquivos--</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
+        background-image: url('https://i.pinimg.com/originals/f2/ff/82/f2ff82037fcc5a2305be0ee82d79e893.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        border: 10px solid transparent;
+        border-image: linear-gradient(45deg, #FF0000, #FFA500, #FFFF00, #008000, #0000FF, #800080) 1;
+        border-image-slice: 2;
+        animation: rainbowBorder 30s linear infinite;
+        font-family: Arial, sans-serif;
+    }
+    @keyframes rainbowBorder {
+        0% {
+            background-position: 100%;
+        }
+        100% {
+            background-position: 0%;
+        }
     }
     h2 {
-      margin-bottom: 10px;
+        margin-bottom: 10px;
+        font-family: 'Old Standard TT', serif;
+        font-size: 2em;
+        text-align: center;
+        margin-top: 20px;
+        background-image: linear-gradient(45deg, #FF0000, #FFA500, #FFFF00, #008000, #0000FF, #800080);
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: rainbowText 10s linear infinite;
+        position: absolute; 
+        top: 0; 
+        left: 50%; 
+        transform: translateX(-50%); 
+    }
+    @keyframes rainbowText {
+        0% {
+            background-position: 100%;
+        }
+        100% {
+            background-position: 0%;
+        }
     }
     .file-link {
-      display: block;
-      margin-bottom: 5px;
-      text-decoration: none;
-      color: #333;
+        display: block;
+        margin-bottom: 5px;
+        text-decoration: none;
+        color: #00FF00;
+        font-size: 2em;
     }
     .file-link:hover {
-      text-decoration: underline;
+        color: #FF00FF;
+        text-decoration: underline;
     }
   </style>
 </head>
@@ -30,13 +73,10 @@
   </ul>
 
   <script>
-    
     const files = [
-      { name: "Slide Viktor Tsoi | Trabalho para o dia 09/05/2024", size: "1,56MB", url: "https://raw.githubusercontent.com/ccsttt/arquivos/main/Apresentação%204.pptx" },
-      
+      { name: "Slide Viktor Tsoi | Trabalho para o dia 09/05/2024", size: "1,56MB", url: "https://raw.githubusercontent.com/ccsttt/arquivos/main/Apresentação%204.pptx" },      
     ];
 
-    // Função para adicionar os arquivos à lista
     function addFilesToList() {
       const fileList = document.getElementById('file-list');
       files.forEach(file => {
@@ -50,7 +90,6 @@
         fileList.appendChild(listItem);
       });
     }
-
     
     window.addEventListener('DOMContentLoaded', addFilesToList);
   </script>
